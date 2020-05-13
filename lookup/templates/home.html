@@ -4,7 +4,18 @@
 
 {% block content %}
 
-<h2>Hello Saif!</h2>
+{% if zipcode %}
+  {{ zipcode }}
 
+
+{% elif api %}
+      {% if api == "Error" %}
+        There is an error , please try after some time....
+      {% else %}
+        <div class="jumbotron {{ Category_color }}">
+        <h1 class="display-4">Category: {{api.0.Category.Name}}</h1>
+        <p class="lead">Area: {{api.0.ReportingArea}} Air Quality: {{ api.0.AQI }} </p>
+        {{ category_discription }}
+      {% endif %}
+{% endif %}
 {% endblock %}
-
