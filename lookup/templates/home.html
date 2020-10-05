@@ -11,11 +11,13 @@
 {% elif api %}
       {% if api == "Error" %}
         There is an error , please try after some time....
+
       {% else %}
         <div class="jumbotron {{ Category_color }}">
-        <h1 class="display-4">Category: {{api.0.Category.Name}}</h1>
-        <p class="lead">Area: {{api.0.ReportingArea}} Air Quality: {{ api.0.AQI }} </p>
-        {{ category_discription }}
+        <h1 class="display-4">Category: {{ category_discription }}</h1>
+        <p class="lead">Your nearest City to your area is: {{api.data.city}} <br> Air Quality: {{ api.data.current.pollution.aqius }} (AQIUS) <br> Category: {{ category_discription }}
+         <br> Pin: {{ Zipcode }}
+        </p>       
       {% endif %}
 {% endif %}
 {% endblock %}
