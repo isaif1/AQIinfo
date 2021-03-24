@@ -30,7 +30,7 @@ python-http-client==3.2.7
 pytz==2019.3
 pyzipcode==2.0.0
 requests==2.22.0
-rsa==4.0
+rsa==4.1
 schedule==0.6.0
 sendgrid==6.2.2
 simplejson==3.17.0
